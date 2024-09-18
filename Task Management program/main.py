@@ -30,17 +30,18 @@ while True:
             #  count=1
              print("**ALL TASKS**\n")
              for i,task in enumerate(tasks,start=1):
-                 if task['completion']==True:
-                     task['completion']='Completed'
-                 else:
-                     task['completion']='Pending'
+                #  if task['completion']==True:
+                #      task['completion']='Completed'
+                #  else:
+                #      task['completion']='Pending'
+                 completion_s="Completed" if task['completion'] else "Pending"
                     
                  print(f"Task {i}")
                  print(f"Task Name: {task['name']}")
                  print(f"Task Description: {task['description']}")
                  print(f"Task Due-Date: {task['d_date']}")
                  print(f"Task Priority: {task['priority']}")
-                 print(f"Task Completion: {task['completion']}")
+                 print(f"Task Completion: {completion_s}")
                 #  count+=1
                  print()
          else:
@@ -103,16 +104,17 @@ while True:
         
         for i,task in enumerate(tasks):
             if task['name']==name:
-                if task['completion']==True:
-                     task['completion']='Completed'
-                else:
-                     task['completion']='Pending'
-
+                # if task['completion']==True:
+                #      task['completion']='Completed'
+                # else:
+                #      task['completion']='Pending'
+                completion_s="Completed" if task['completion'] else "Pending"
+    
                 print(f"Task Name: {task['name']}")
                 print(f"Task Description: {task['description']}")
                 print(f"Task Due-Date: {task['d_date']}")
                 print(f"Task Priority: {task['priority']}")
-                print(f"Task Completion: {task['completion']}")
+                print(f"Task Completion: {completion_s}")
                 found=True
                 break
         if found:
