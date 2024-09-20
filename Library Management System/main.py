@@ -51,7 +51,14 @@ def updatebook(books):
 
 def addbook(books):
     book={}
-    book['id']=input("Enter the book id:")
+    while True:
+        id=input("Enter the book id:")
+
+        if any(book['id']==id for book in books):
+                print("Id already exists....try another Id")
+        else:
+            book['id']=id
+            break
     book['title']=input("Enter the Book Title:")
     book['author']=input("Enter the Author's Name:")
     book['quantity']=int(input("Enter the Book Quantity:"))
@@ -134,13 +141,15 @@ def login(users,books):
     username=input("Enter your Username:")
     password=input("Enter your password:")
 
-    if any(user['uname']==username for user in users):
-        print("Login Successfull!!")
-        print()
-        usermenu(books)
-    else:
-        print("INVALID CREDENTIALS!!")
-        print()
+    for user in users:
+        if user['uname']==username and user['pass']==password:
+            print("WELCOME")
+            print()
+            usermenu(books)
+        else:
+            print("INVALID CREDENTIALS!!")
+            print()
+            break
     
 def usermenu(books):
     while True:
