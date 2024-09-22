@@ -3,3 +3,4 @@ for each in file:
     print(each)
 
 file.close()
+
