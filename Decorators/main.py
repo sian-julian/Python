@@ -1,4 +1,4 @@
-# EXMAPLE 1
+# # EXMAPLE 1
 
 # def strupper(func):
 #     def inner():
@@ -59,18 +59,18 @@
 
 #Exmaple
 
-def outer(expr):
-    def dec(func):
-        def inner():
-            return func() + expr
-        return inner
-    return dec
+# def outer(expr):
+#     def dec(func):
+#         def inner():
+#             return func() + expr
+#         return inner
+#     return dec
 
-@outer("sian")
-def ordinary():
-    return "good morning "
+# @outer("sian")
+# def ordinary():
+#     return "good morning "
 
-print(ordinary())
+# print(ordinary())
 
 
 
